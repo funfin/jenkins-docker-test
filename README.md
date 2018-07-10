@@ -11,6 +11,7 @@ docker run \
   -v /var/lib/docker/:/var/lib/docker:rw \
   -v /sys:/sys:ro \
   -v /var/run:/var/run:rw \
+  --group-add=$(stat -c %g /var/run/docker.sock) \
   funfin/jenkins-docker-test
   
 ```
